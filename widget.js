@@ -18,6 +18,7 @@ WAF.define('TextArea', ['waf-core/widget'], function(widget) {
         switch (event.target) {
             case 'value':
                 this.node.value = value;
+                this.node.textContent = value;
                 return;
 
             case 'maxLength':
@@ -80,6 +81,7 @@ WAF.define('TextArea', ['waf-core/widget'], function(widget) {
             updateAttribute.call(this, 'placeholder');
 
             this.node.textContent = this.value();
+            this.node.value = this.value();
 
             subscriber = this.subscribe('change', onChange, this);
             subscriber.options.once = true;
@@ -90,8 +92,18 @@ WAF.define('TextArea', ['waf-core/widget'], function(widget) {
         },
         hasFocus: function hasFocus () {
             return (document.activeElement === this.node);
+        },
+        disable: function() {
+           this.$super('disable')();
+           this.node.disabled = true;
+        },
+        enable: function() {
+           this.$super('enable')();
+           this.node.disabled = false;
         }
     });
+
+    TextArea.addTabIndex();
 
     return TextArea;
 });

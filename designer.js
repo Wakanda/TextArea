@@ -1,5 +1,5 @@
 (function(TextArea) {
-    "use strict";
+    'use strict';
 
     TextArea.setWidth(200);
     TextArea.setHeight(200);
@@ -55,16 +55,16 @@
         description: 'On Select',
         category: 'Keyboard Events'
     },{
-        name: 'touchstart',
-        description: 'On Touch Start',
+        name: 'touchcancel',
+        description: 'On Touch Cancel',
         category: 'Touch Events'
     },{
         name: 'touchend',
         description: 'On Touch End',
         category: 'Touch Events'
     },{
-        name: 'touchcancel',
-        description: 'On Touch Cancel',
+        name: 'touchstart',
+        description: 'On Touch Start',
         category: 'Touch Events'
     });
 
@@ -72,13 +72,13 @@
 
     TextArea.customizeProperty('value',{ multiline: true });
     TextArea.customizeProperty('readOnly',{ title: 'Read only' });
-    TextArea.customizeProperty('maxLength',{ title: 'Max length' });
+    TextArea.customizeProperty('maxLength',{ title: 'Maximum length' });
 
     function showValue(){
         var dsValue = this.value.boundDatasource();
         if (dsValue && dsValue.datasourceName) {
             this.value('['+ dsValue +']');
-        } else if (!dsValue) {
+        } else if (!dsValue && arguments.length) {
             this.value('');
         }
     }

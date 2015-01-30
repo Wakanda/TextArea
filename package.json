@@ -1,7 +1,7 @@
 {
     "name": "TextArea",
     "type": "widget",
-    "studioName": "TextArea",
+    "studioName": "Text Area",
     "category": "Form Controls",
     "iconPath": "/icons/widget.png",
     "author": "4D SAS",
