@@ -72,7 +72,7 @@
 
     TextArea.customizeProperty('value',{ multiline: true });
     TextArea.customizeProperty('readOnly',{ title: 'Read only' });
-    TextArea.customizeProperty('maxLength',{ title: 'Maximum length' });
+    TextArea.customizeProperty('maxLength',{ title: 'Max length' });
 
     function showValue(){
         var dsValue = this.value.boundDatasource();

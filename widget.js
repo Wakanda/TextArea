@@ -48,7 +48,7 @@ WAF.define('TextArea', ['waf-core/widget'], function(widget) {
         }),
         maxLength: widget.property({
             type: 'integer',
-            description: 'Maximum length (in characters) to textarea',
+            description: 'Maximum length (in characters) to input',
             bindable: false,
             defaultValueCallback: function() {
                 return parseInt(this.node.getAttribute('maxlength'), 10) || '';
